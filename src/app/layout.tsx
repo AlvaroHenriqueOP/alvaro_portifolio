@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     ],
   },
   icons: {
-    icon: "/profile/favicon.ico",
+    icon: "/icon.png",
   },
   other: {
     'theme-color': '#0086A8',
