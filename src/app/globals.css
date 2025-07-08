@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  --primary-dark: #060709;
+  --primary-medium: #121620;
+  --secondary-light: #57E2D9;
+  --secondary-lighter: #3A8A87;
+  --accent-purple: #7547FF;
+  --accent-blue: #0086A8;
+  --accent-purple-rgb: 117, 71, 255;
+  --accent-blue-rgb: 0, 134, 168;
+  --header-bg: #080A0F;
+  --about-bg: #151A25;
+  --skills-bg: #0A1116;
+  --services-bg: #131820;
+  --projects-bg: #0D131A;
+  --contact-bg: #0A1116;
+  --footer-bg: #080A0F;
+  --white: #ffffff;
+  --white-soft: rgba(255, 255, 255, 0.8);
+  --white-muted: rgba(255, 255, 255, 0.65);
+  --white-faded: rgba(255, 255, 255, 0.07);
+  --neon-glow: 0 0 10px rgba(87, 226, 217, 0.5);
+  --purple-glow: 0 0 10px rgba(117, 71, 255, 0.5);
+  --blue-glow: 0 0 10px rgba(0, 134, 168, 0.5);
+}
+
+/* Garantindo que os ícones e gradientes sejam exibidos corretamente */
+.fa, .fa-brands, .fa-solid, .fa-regular, .fas, .far, .fab {
+  display: inline-block !important;
+  font-style: normal !important;
+  font-variant: normal !important;
+  text-rendering: auto !important;
+  line-height: 1 !important;
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+.text-transparent {
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--primary-dark);
+  color: var(--white-soft);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  font-size: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--secondary-light), var(--accent-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-particle {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  opacity: 0.3;
+  animation: float 6s infinite ease-in-out;
+  box-shadow: 0 0 15px rgba(var(--accent-blue-rgb), 0.4);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+  box-shadow: var(--neon-glow);
+}
+
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--secondary-light), transparent);
+  margin: 0 auto;
+  opacity: 0.5;
+}
+
+.section-header {
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 2px;
+  background-color: var(--accent-purple);
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(5deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(87, 226, 217, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(87, 226, 217, 0.6);
+  }
+}
+
+/* Barra de rolagem personalizada */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-light);
+}
+
+/* Estilos para diferentes seções */
+#navbar {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid rgba(87, 226, 217, 0.2);
+}
+
+#hero {
+  background-color: var(--primary-dark);
+  border-bottom: 1px solid rgba(94, 61, 219, 0.2);
+}
+
+#sobre {
+  background-color: var(--skills-bg);
+  border-top: 1px solid rgba(87, 226, 217, 0.2);
+  border-bottom: 1px solid rgba(94, 61, 219, 0.2);
+}
+
+#skills {
+  background-color: var(--skills-bg);
+  border-top: 1px solid rgba(87, 226, 217, 0.2);
+  border-bottom: 1px solid rgba(94, 61, 219, 0.2);
+}
+
+#services {
+  background-color: var(--skills-bg);
+  border-top: 1px solid rgba(87, 226, 217, 0.2);
+  border-bottom: 1px solid rgba(94, 61, 219, 0.2);
+}
+
+#projects {
+  background-color: var(--skills-bg);
+  border-top: 1px solid rgba(87, 226, 217, 0.2);
+  border-bottom: 1px solid rgba(94, 61, 219, 0.2);
+}
+
+#contact {
+  background-color: var(--skills-bg);
+  border-top: 1px solid rgba(87, 226, 217, 0.2);
+  border-bottom: 1px solid rgba(94, 61, 219, 0.2);
+}
+
+footer {
+  background-color: var(--footer-bg);
+  border-top: 1px solid rgba(87, 226, 217, 0.2);
+}
+
+/* Responsividade para telas grandes */
+@media (min-width: 1600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    max-width: 1440px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  /* Hero section */
+  #hero .text-4xl {
+    font-size: 3.75rem;
+  }
+  
+  #hero .text-6xl {
+    font-size: 5rem;
+  }
+  
+  #hero .text-3xl {
+    font-size: 2.75rem;
+  }
+  
+  #hero .text-2xl {
+    font-size: 2rem;
+  }
+  
+  #hero .w-72, #hero .h-72 {
+    width: 18rem;
+    height: 18rem;
+  }
+  
+  #hero .w-96, #hero .h-96 {
+    width: 24rem;
+    height: 24rem;
+  }
+
+  /* About section */
+  #sobre .text-3xl {
+    font-size: 2.75rem;
+  }
+  
+  #sobre .text-4xl {
+    font-size: 3.5rem;
+  }
+  
+  #sobre .text-2xl {
+    font-size: 2rem;
+  }
+  
+  #sobre .text-lg {
+    font-size: 1.175rem;
+  }
+  
+  #sobre .w-24 {
+    width: 7rem;
+  }
+
+  /* Skill section */
+  #skills .skill-card {
+    padding: 1.5rem;
+  }
+  
+  #skills .skill-icon {
+    font-size: 2rem;
+  }
+
+  /* Services section */
+  #services .service-card {
+    padding: 2rem;
+  }
+  
+  #services .service-icon {
+    font-size: 2rem;
+  }
+
+  /* Projects section */
+  #projects .project-card {
+    height: 24rem;
+  }
+
+  /* Contact section */
+  #contact .contact-form .form-input,
+  #contact .contact-form .form-textarea {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  #contact .contact-info-item {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive para telas extra grandes */
+@media (min-width: 2000px) {
+  body {
+    font-size: 17px;
+  }
+
+  .container {
+    max-width: 1680px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  #hero .text-4xl {
+    font-size: 4rem;
+  }
+  
+  #hero .text-6xl {
+    font-size: 5.5rem;
+  }
+  
+  #hero .text-2xl {
+    font-size: 2.25rem;
+  }
+  
+  #hero .w-96, #hero .h-96 {
+    width: 28rem;
+    height: 28rem;
+  }
+
+  /* Aumentar o espaçamento entre seções */
+  section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  /* Aumentar o espaçamento entre elementos */
+  .gap-4 {
+    gap: 1.25rem;
+  }
+  
+  .gap-6 {
+    gap: 1.5rem;
+  }
+  
+  .gap-8 {
+    gap: 2rem;
+  }
+  
+  .gap-12 {
+    gap: 3rem;
+  }
+
+  /* Ajustar tamanho dos cards em grids */
+  .grid-cols-2 > div,
+  .grid-cols-3 > div,
+  .grid-cols-4 > div {
+    padding: 1.5rem;
+  }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Responsividade para telas móveis */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  section {
+    padding: 3rem 1rem;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Centralizar texto em cabeçalhos de seção */
+  .section-header {
+    text-align: center;
+  }
+
+  /* Ajustes no Hero Section */
+  #hero {
+    text-align: center;
+  }
+
+  #hero .flex-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Ajustar grids para uma coluna */
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Ajustar espaçamento em telas pequenas */
+  .gap-8 {
+    gap: 1.5rem;
+  }
+
+  .gap-12 {
+    gap: 2rem;
+  }
+}
+
