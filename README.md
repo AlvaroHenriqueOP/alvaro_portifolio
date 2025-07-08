@@ -1,6 +1,23 @@
 # Personal Portfolio
 
+<div align="center">
+  <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white" alt="Next.js" />
+  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white" alt="Framer Motion" />
+</div>
+
 This repository contains the source code for my personal portfolio, a modern and interactive web application designed to showcase my skills, projects, and professional experience. The project is built with Next.js and styled with Tailwind CSS, resulting in a high-performance, responsive, and visually appealing website.
+
+<details>
+<summary>🇧🇷 Ver em Português</summary>
+
+## Portfolio Pessoal
+
+Este repositório contém o código-fonte do meu portfólio pessoal, uma aplicação web moderna e interativa projetada para mostrar minhas habilidades, projetos e experiência profissional. O projeto é construído com Next.js e estilizado com Tailwind CSS, resultando em um site de alto desempenho, responsivo e visualmente atraente.
+
+</details>
 
 ## ✨ Key Features
 
