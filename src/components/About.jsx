@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDownload, faPaperPlane, faCode, faRobot, faPaintBrush, faComments } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('perfil');
@@ -230,7 +232,7 @@ const About = () => {
                     whileHover={{ scale: 1.05, boxShadow: "0 15px 25px -5px rgba(94, 61, 219, 0.4)" }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <i className="fa-solid fa-download"></i>
+                    <FontAwesomeIcon icon={faDownload} />
                     Baixar CV
                   </motion.a>
                   <motion.a 
@@ -239,7 +241,7 @@ const About = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <i className="fa-solid fa-paper-plane"></i>
+                    <FontAwesomeIcon icon={faPaperPlane} />
                     Contato
                   </motion.a>
                 </motion.div>
@@ -264,25 +266,25 @@ const About = () => {
             >
               {[
                 {
-                  icon: "fa-solid fa-code",
+                  icon: faCode,
                   color: "text-accent-blue",
                   title: "Desenvolvimento Front-end",
                   text: "Criação de interfaces responsivas e acessíveis com React, Next.js, TailwindCSS, CSS, HTML, JavaScript e outras tecnologias modernas."
                 },
                 {
-                  icon: "fa-solid fa-robot",
+                  icon: faRobot,
                   color: "text-accent-purple",
                   title: "Inteligência Artificial",
                   text: "Implementação de modelos de IA para criar experiências interativas mais inteligentes e personalizadas."
                 },
                 {
-                  icon: "fa-solid fa-paint-brush",
+                  icon: faPaintBrush,
                   color: "text-secondary-light",
                   title: "UI/UX Design",
                   text: "Design de interfaces focadas na experiência do usuário, com atenção a detalhes visuais e usabilidade."
                 },
                 {
-                  icon: "fa-solid fa-comments",
+                  icon: faComments,
                   color: "text-accent-blue",
                   title: "Chatbots",
                   text: "Desenvolvimento de soluções conversacionais inteligentes para automação e melhoria do atendimento."
@@ -311,7 +313,7 @@ const About = () => {
                     }
                     transition={{ duration: 0.5 }}
                   >
-                    <i className={specialty.icon}></i>
+                    <FontAwesomeIcon icon={specialty.icon} />
                   </motion.div>
                   <h4 className="text-white text-lg font-semibold mb-2">{specialty.title}</h4>
                   <p className="text-white/70">{specialty.text}</p>

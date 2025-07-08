@@ -9,9 +9,9 @@ import {
   faPhone, 
   faLocationDot, 
   faChevronRight, 
-  faCopyright,
   faArrowRight
 } from '@fortawesome/free-solid-svg-icons';
+import { faCopyright } from '@fortawesome/free-regular-svg-icons';
 import { 
   faLinkedinIn, 
   faGithub, 
@@ -82,7 +82,7 @@ const Footer = () => {
                   whileHover={{ y: -3, scale: 1.1, boxShadow: '0 5px 15px rgba(var(--accent-purple-rgb), 0.4)' }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <i className="fab fa-github text-xl"></i>
+                  <FontAwesomeIcon icon={faGithub} className="text-xl" />
                 </motion.a>
                 
                 <motion.a 
@@ -93,7 +93,7 @@ const Footer = () => {
                   whileHover={{ y: -3, scale: 1.1, boxShadow: '0 5px 15px rgba(var(--accent-blue-rgb), 0.4)' }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <i className="fab fa-linkedin-in text-xl"></i>
+                  <FontAwesomeIcon icon={faLinkedinIn} className="text-xl" />
                 </motion.a>
                 
                 <motion.a 
@@ -104,7 +104,7 @@ const Footer = () => {
                   whileHover={{ y: -3, scale: 1.1, boxShadow: '0 5px 15px rgba(var(--accent-blue-rgb), 0.4)' }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <i className="fab fa-instagram text-xl"></i>
+                  <FontAwesomeIcon icon={faInstagram} className="text-xl" />
                 </motion.a>
               </div>
             </motion.div>
@@ -157,7 +157,7 @@ const Footer = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <h4 className="text-lg font-semibold mb-4 flex items-center">
-              <i className="fa-solid fa-address-card text-accent-purple mr-2"></i>
+              <FontAwesomeIcon icon={faAddressCard} className="text-accent-purple mr-2" />
               <span style={{
                 background: 'linear-gradient(90deg, #7547FF, #0086A8)',
                 WebkitBackgroundClip: 'text',
@@ -174,11 +174,11 @@ const Footer = () => {
                   className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-primary-medium/80 to-primary-dark/80 flex items-center justify-center mr-3 border border-accent-purple/20 group-hover:border-accent-purple/40 transition-colors"
                   whileHover={{ scale: 1.1 }}
                 >
-                  <i className="fa-solid fa-envelope text-accent-purple"></i>
+                  <FontAwesomeIcon icon={faEnvelope} className="text-accent-purple" />
                 </motion.div>
                 <a href="mailto:alvaro.hop@hotmail.com" className="text-white hover:text-secondary-light transition-colors duration-300 text-base group flex items-center gap-1">
                   alvaro.hop@hotmail.com
-                  <i className="fa-solid fa-arrow-right text-accent-purple text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300"></i>
+                  <FontAwesomeIcon icon={faArrowRight} className="text-accent-purple text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </a>
               </motion.li>
               <motion.li 
@@ -189,7 +189,7 @@ const Footer = () => {
                   className="flex-shrink-0 w-8 h-8 rounded-lg bg-gradient-to-br from-primary-medium/80 to-primary-dark/80 flex items-center justify-center mr-3 border border-accent-purple/20 group-hover:border-accent-blue/40 transition-colors"
                   whileHover={{ scale: 1.1 }}
                 >
-                  <i className="fa-solid fa-location-dot text-accent-purple"></i>
+                  <FontAwesomeIcon icon={faLocationDot} className="text-accent-purple" />
                 </motion.div>
                 <span className="text-white text-base">Salvador, BA - Brasil</span>
               </motion.li>
@@ -206,7 +206,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row items-center justify-between">
             <p className="text-white/60 text-sm text-center md:text-left mb-4 md:mb-0 flex items-center">
-              <i className="fa-regular fa-copyright mr-2 text-accent-purple/60"></i>
+              <FontAwesomeIcon icon={faCopyright} className="mr-2 text-accent-purple/60" />
               {currentYear} Feito por Álvaro Henrique. Todos os direitos reservados.
             </p>
             <div className="flex space-x-6">

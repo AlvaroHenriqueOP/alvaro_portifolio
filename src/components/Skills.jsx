@@ -1,7 +1,18 @@
 "use client"
 
-import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faCode, faBrain, faRobot, faKeyboard, faBolt, 
+  faServer, faWind, faSearch, faImage, faBookOpen, faLanguage, faCommentDots, 
+  faPlug, faLink, faSitemap, faNetworkWired, faComments, 
+  faTerminal, faPaperPlane, faCubes
+} from '@fortawesome/free-solid-svg-icons';
+import { 
+  faReact, faJs, faHtml5, faCss3Alt, faGitAlt, faGithub, faNpm, faFigma 
+} from '@fortawesome/free-brands-svg-icons';
 
 const Skills = () => {
   const [activeCategory, setActiveCategory] = useState('frontend');
@@ -23,47 +34,47 @@ const Skills = () => {
   const skillCategories = [
     {
       id: 'frontend',
-      name: 'Front-end',
-      icon: 'fa-code',
+      title: 'Front-End',
+      icon: faCode,
       color: 'from-secondary-light/90 to-accent-blue/90',
       skills: [
-        { name: 'React', icon: 'fab fa-react' },
-        { name: 'Next.js', icon: 'fas fa-bolt' },
-        { name: 'JavaScript', icon: 'fab fa-js' },
-        { name: 'HTML5', icon: 'fab fa-html5' },
-        { name: 'CSS3', icon: 'fab fa-css3-alt' },
-        { name: 'Vercel', icon: 'fas fa-server' },
-        { name: 'Tailwind', icon: 'fas fa-wind' }
+        { name: 'React', icon: faReact },
+        { name: 'Next.js', icon: faBolt },
+        { name: 'JavaScript', icon: faJs },
+        { name: 'HTML5', icon: faHtml5 },
+        { name: 'CSS3', icon: faCss3Alt },
+        { name: 'Vercel', icon: faServer },
+        { name: 'Tailwind', icon: faWind }
       ]
     },
     {
       id: 'ia',
-      name: 'IA',
-      icon: 'fa-brain',
+      title: 'Inteligência Artificial',
+      icon: faBrain,
       color: 'from-accent-purple/90 to-secondary-light/90',
       skills: [
-        { name: 'Prompt Engineering', icon: 'fas fa-keyboard' },
-        { name: 'LLMs', icon: 'fas fa-brain' },
-        { name: 'GPT', icon: 'fas fa-robot' },
-        { name: 'Perplexity', icon: 'fas fa-search' },
-        { name: 'Ideogram', icon: 'fas fa-image' },
-        { name: 'Notebook LM', icon: 'fas fa-book-open' },
-        { name: 'NLP', icon: 'fas fa-language' }
+        { name: 'Prompt Engineering', icon: faKeyboard },
+        { name: 'LLMs', icon: faBrain },
+        { name: 'GPT', icon: faRobot },
+        { name: 'Perplexity', icon: faSearch },
+        { name: 'Ideogram', icon: faImage },
+        { name: 'Notebook LM', icon: faBookOpen },
+        { name: 'NLP', icon: faLanguage }
       ]
     },
     {
       id: 'chatbots',
-      name: 'Chatbots',
-      icon: 'fa-robot',
+      title: 'Chatbots',
+      icon: faRobot,
       color: 'from-secondary-light/90 to-accent-purple/90',
       skills: [
-        { name: 'DialogFlow', icon: 'fas fa-comment-dots' },
-        { name: 'ChatGPT API', icon: 'fas fa-plug' },
-        { name: 'Webhook', icon: 'fas fa-link' },
-        { name: 'Typebot', icon: 'fas fa-sitemap' },
-        { name: 'APIs externas', icon: 'fas fa-network-wired' },
-        { name: 'IA Conversacional', icon: 'fas fa-brain' },
-        { name: 'UX Conversacional', icon: 'fas fa-comments' }
+        { name: 'DialogFlow', icon: faCommentDots },
+        { name: 'ChatGPT API', icon: faPlug },
+        { name: 'Webhook', icon: faLink },
+        { name: 'Typebot', icon: faSitemap },
+        { name: 'APIs externas', icon: faNetworkWired },
+        { name: 'IA Conversacional', icon: faBrain },
+        { name: 'UX Conversacional', icon: faComments }
       ]
     }
   ];
@@ -157,22 +168,15 @@ const Skills = () => {
         </motion.div>
 
         {/* Navegação de categorias simples */}
-        <motion.div 
-          className="flex flex-wrap justify-center gap-2 mb-6"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
           {skillCategories.map((category, idx) => (
             <motion.button
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
-              className={`relative px-3 py-1.5 rounded-full text-xs flex items-center gap-1.5 transition-all overflow-hidden
-                ${activeCategory === category.id 
-                  ? 'text-primary-dark font-medium shadow-md' 
-                  : 'bg-primary-dark/40 text-white border border-white/10'
-                }`}
+              className={`relative px-3 py-1.5 rounded-full text-xs flex items-center gap-1.5 transition-all overflow-hidden ${activeCategory === category.id 
+                ? 'text-primary-dark font-medium shadow-md' 
+                : 'bg-primary-dark/40 text-white border border-white/10'
+              }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0, y: 20 }}
@@ -188,11 +192,11 @@ const Skills = () => {
                   transition={{ duration: 0.3 }}
                 />
               )}
-              <i className={`fas ${category.icon}`}></i>
-              {category.name}
+              <FontAwesomeIcon icon={category.icon} className="mr-2 text-base" />
+              {category.title}
             </motion.button>
           ))}
-        </motion.div>
+        </div>
 
         {/* Grid de habilidades simplificado */}
         <motion.div
@@ -230,7 +234,7 @@ const Skills = () => {
                 }}
                 transition={iconTransition}
               >
-                <i className={`${skill.icon} text-xl ${hoveredSkill === skill.name ? 'text-secondary-light' : 'text-accent-purple'}`}></i>
+                <FontAwesomeIcon icon={skill.icon} className={`text-xl ${hoveredSkill === skill.name ? 'text-secondary-light' : 'text-accent-purple'}`} />
               </motion.div>
               <h4 className="text-white-soft text-sm font-medium">{skill.name}</h4>
             </motion.div>
@@ -258,14 +262,14 @@ const Skills = () => {
           
           <div className="grid grid-cols-4 sm:grid-cols-4 md:grid-cols-8 gap-3">
             {[
-              { name: 'Git', icon: 'fab fa-git-alt', color: '#F05032' },
-              { name: 'GitHub', icon: 'fab fa-github', color: '#ffffff' },
-              { name: 'VSCode', icon: 'fas fa-code', color: '#007ACC' },
-              { name: 'Figma', icon: 'fab fa-figma', color: '#F24E1E' },
-              { name: 'Terminal', icon: 'fas fa-terminal', color: '#4CAF50' },
-              { name: 'Postman', icon: 'fas fa-paper-plane', color: '#FF6C37' },
-              { name: 'Webpack', icon: 'fas fa-cubes', color: '#8DD6F9' },
-              { name: 'NPM', icon: 'fab fa-npm', color: '#CB3837' }
+              { name: 'Git', icon: faGitAlt, color: '#F05032' },
+              { name: 'GitHub', icon: faGithub, color: '#ffffff' },
+              { name: 'VSCode', icon: faCode, color: '#007ACC' },
+              { name: 'Figma', icon: faFigma, color: '#F24E1E' },
+              { name: 'Terminal', icon: faTerminal, color: '#4CAF50' },
+              { name: 'Postman', icon: faPaperPlane, color: '#FF6C37' },
+              { name: 'Webpack', icon: faCubes, color: '#8DD6F9' },
+              { name: 'NPM', icon: faNpm, color: '#CB3837' }
             ].map((tool, idx) => (
               <motion.div
                 key={tool.name}
@@ -286,7 +290,7 @@ const Skills = () => {
                   className="w-8 h-8 rounded-full bg-gradient-to-br from-primary-dark/90 to-primary-dark flex items-center justify-center mb-2"
                   transition={{ duration: 0.15, type: "tween" }}
                 >
-                  <i className={`${tool.icon} text-lg`} style={{ color: tool.color }}></i>
+                  <FontAwesomeIcon icon={tool.icon} className="text-lg" style={{ color: tool.color }} />
                 </motion.div>
                 <span className="text-white text-xs font-medium">{tool.name}</span>
               </motion.div>

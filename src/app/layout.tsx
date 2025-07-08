@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Poppins, Montserrat } from 'next/font/google';
 import "./globals.css";
 
 // Substituir os placeholders
@@ -48,50 +49,25 @@ export const metadata: Metadata = {
   }
 };
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-poppins',
+});
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-montserrat',
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <head>
-        {/* Font Awesome para ícones */}
-        <link 
-          rel="stylesheet" 
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-          crossOrigin="anonymous" 
-          referrerPolicy="no-referrer" 
-        />
-        {/* Estilos para o efeito de gradiente em texto */}
-        <style dangerouslySetInnerHTML={{ __html: `
-          .bg-clip-text {
-            -webkit-background-clip: text !important;
-            background-clip: text !important;
-          }
-          .text-transparent {
-            -webkit-text-fill-color: transparent !important;
-            color: transparent !important;
-          }
-        `}} />
-        {/* Schema.org para SEO estruturado */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            "name": siteConfig.author,
-            "url": siteConfig.url,
-            "image": siteConfig.ogImage,
-            "jobTitle": "Desenvolvedor Front-End",
-            "sameAs": [
-              siteConfig.github,
-              siteConfig.linkedin
-            ]
-          }) }}
-        />
-      </head>
+    <html lang="pt-BR" className={`${poppins.variable} ${montserrat.variable}`}>
       <body className="antialiased">
         {children}
       </body>

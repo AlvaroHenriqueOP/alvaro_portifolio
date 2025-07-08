@@ -3,6 +3,8 @@
 import { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight, faEnvelope, faCode, faRobot } from '@fortawesome/free-solid-svg-icons';
 
 const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -516,7 +518,7 @@ const Hero = () => {
             >
               <span className="relative z-10">Ver Projetos</span>
               <div className="absolute inset-0 bg-gradient-to-r from-accent-purple to-accent-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <i className="fa-solid fa-arrow-right relative z-10"></i>
+              <FontAwesomeIcon icon={faArrowRight} className="relative z-10" />
             </motion.a>
               
             <motion.a 
@@ -526,7 +528,7 @@ const Hero = () => {
               whileTap={{ scale: 0.95 }}
             >
               <span>Contato</span>
-              <i className="fa-solid fa-envelope"></i>
+              <FontAwesomeIcon icon={faEnvelope} />
             </motion.a>
           </motion.div>
         </div>
@@ -550,6 +552,8 @@ const Hero = () => {
                 alt="Álvaro Henrique"
                 fill
                 className="object-cover"
+                priority
+                sizes="(max-width: 768px) 18rem, (max-width: 1280px) 24rem, 22rem"
               />
             </div>
             
@@ -566,7 +570,7 @@ const Hero = () => {
                 repeatType: "reverse"
               }}
             >
-              <i className="fa-solid fa-code text-xl text-accent-blue"></i>
+              <FontAwesomeIcon icon={faCode} className="text-xl text-accent-blue" />
             </motion.div>
             
             <motion.div
@@ -582,30 +586,14 @@ const Hero = () => {
                 repeatType: "reverse"
               }}
             >
-              <i className="fa-solid fa-robot text-xl text-accent-purple"></i>
+              <FontAwesomeIcon icon={faRobot} className="text-xl text-accent-purple" />
             </motion.div>
           </div>
         </motion.div>
       </div>
       
-      {/* Scroll Indicator */}
-      <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.2, duration: 0.8 }}
-      >
-        <p className="text-white-muted text-sm mb-2 xl:text-base">Rolar para explorar</p>
-        <motion.div
-          className="w-6 h-10 border-2 border-white-muted rounded-full flex justify-center items-start p-1 xl:w-7 xl:h-12"
-          animate={{ y: [0, 5, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
-          <div className="w-1.5 h-3 bg-white-muted rounded-full xl:w-2 xl:h-4"></div>
-        </motion.div>
-      </motion.div>
     </section>
   );
 };
 
-export default Hero; 
+export default Hero;

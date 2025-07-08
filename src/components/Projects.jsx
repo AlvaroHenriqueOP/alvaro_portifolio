@@ -3,6 +3,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight, faPlay, faArrowUpRightFromSquare, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -200,7 +202,7 @@ const Projects = () => {
                       className="absolute top-4 right-4 bg-black/60 text-white rounded-full w-10 h-10 z-50 backdrop-blur-sm border border-white/10 shadow-xl flex items-center justify-center hover:bg-accent-blue/30 transition-colors"
                       onClick={closeModal}
                     >
-                      <i className="fa-solid fa-times text-xl"></i>
+                      <FontAwesomeIcon icon={faTimes} className="text-3xl" />
                     </button>
 
                     <AnimatePresence mode="wait">
@@ -250,14 +252,14 @@ const Projects = () => {
                       onClick={(e) => { e.stopPropagation(); prevImage(); }}
                       disabled={selectedProject.media.length <= 1}
                     >
-                      <i className="fa-solid fa-chevron-left text-2xl"></i>
+                      <FontAwesomeIcon icon={faChevronLeft} className="text-2xl" />
                     </button>
                     <button 
                       className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white rounded-full w-12 h-12 backdrop-blur-sm hover:bg-accent-blue/30 flex items-center justify-center transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                       onClick={(e) => { e.stopPropagation(); nextImage(); }}
                       disabled={selectedProject.media.length <= 1}
                     >
-                      <i className="fa-solid fa-chevron-right text-2xl"></i>
+                      <FontAwesomeIcon icon={faChevronRight} className="text-2xl" />
                     </button>
                   </div>
 
@@ -278,7 +280,7 @@ const Projects = () => {
                           />
                           {item.type === 'video' && (
                             <div className="absolute inset-0 flex items-center justify-center bg-black/40">
-                              <i className="fa-solid fa-play text-white text-2xl"></i>
+                              <FontAwesomeIcon icon={faPlay} className="text-white text-2xl" />
                             </div>
                           )}
                         </button>
@@ -313,7 +315,7 @@ const Projects = () => {
                     className="mt-4 flex-shrink-0 inline-flex items-center justify-center w-full px-6 py-4 rounded-xl bg-gradient-to-r from-accent-purple via-accent-blue to-accent-purple text-white text-lg font-bold shadow-xl shadow-accent-blue/40 border-2 border-accent-blue/40 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-accent-blue/40 relative overflow-hidden group hover:scale-[1.03] hover:shadow-2xl"
                   >
                     <span className="mr-3">Ver Projeto Online</span>
-                    <i className="fa-solid fa-arrow-up-right-from-square text-base group-hover:animate-pulse"></i>
+                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-base group-hover:animate-pulse" />
                   </a>
                 </div>
             </motion.div>

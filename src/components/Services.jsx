@@ -2,6 +2,17 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+  faCode, faBrain, faComments, faMobileScreen, 
+  faMagnifyingGlass, faPlug, faPencilRuler, faLaptopCode, faClipboardCheck, 
+  faRocket, faPenFancy, faRobot, faNetworkWired, faChartLine, 
+  faMagnifyingGlassChart, faKeyboard, faCogs, faHeadset, faCalendarCheck, 
+  faLink, faLifeRing, faPalette, faVectorSquare, faHandPointer, faUsers, 
+  faSitemap, faDiagramProject, faCodeBranch, faSliders, faHandshake, 
+  faArrowRight
+} from '@fortawesome/free-solid-svg-icons';
+import { faReact } from '@fortawesome/free-brands-svg-icons';
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -11,68 +22,68 @@ const Services = () => {
     {
       id: 'frontend',
       title: 'Front-end',
-      icon: 'fa-solid fa-code',
+      icon: faCode,
       color: 'bg-gradient-to-br from-secondary-light/80 to-accent-blue/80',
       textColor: 'text-cyan-300',
       description: 'Criação de landing pages com tecnologias modernas, responsivas e otimizadas para oferecer a melhor experiência ao usuário e melhorar a conversão.',
       features: [
-        { name: 'Desenvolvimento com React & Next.js para aplicações rápidas e dinâmicas.', icon: 'fa-brands fa-react' },
-        { name: 'Design Mobile First para interfaces adaptáveis em todos os dispositivos.', icon: 'fa-solid fa-mobile-screen' },
-        { name: 'Otimização para SEO para melhor visibilidade nos motores de busca.', icon: 'fa-solid fa-magnifying-glass' },
-        { name: 'Integração com APIs para funcionalidades avançadas.', icon: 'fa-solid fa-plug' }
+        { name: 'Desenvolvimento com React & Next.js para aplicações rápidas e dinâmicas.', icon: faReact },
+        { name: 'Design Mobile First para interfaces adaptáveis em todos os dispositivos.', icon: faMobileScreen },
+        { name: 'Otimização para SEO para melhor visibilidade nos motores de busca.', icon: faMagnifyingGlass },
+        { name: 'Integração com APIs para funcionalidades avançadas.', icon: faPlug }
       ],
       technologies: ['React', 'Next.js', 'TailwindCSS', 'CSS', 'HTML', 'JavaScript'],
       workflow: [
-        { text: 'Entrevista para compreender a identidade da marca e objetivos do site.', icon: 'fa-solid fa-comments' },
-        { text: 'Definição do layout e experiência do usuário afim de estruturar a interface pensando em acessibilidade e responsividade.', icon: 'fa-solid fa-pencil-ruler' },
-        { text: 'Desenvolvimento do front-end com foco em performance e acessibilidade.', icon: 'fa-solid fa-laptop-code' },
-        { text: 'Testes e ajustes para garantir a qualidade do projeto, verificando compatibilidade, desempenho e SEO.', icon: 'fa-solid fa-clipboard-check' },
-        { text: 'Entrega final e acompanhamento para garantir que o projeto esteja funcionando conforme o esperado.', icon: 'fa-solid fa-rocket' }
+        { text: 'Entrevista para compreender a identidade da marca e objetivos do site.', icon: faComments },
+        { text: 'Definição do layout e experiência do usuário afim de estruturar a interface pensando em acessibilidade e responsividade.', icon: faPencilRuler },
+        { text: 'Desenvolvimento do front-end com foco em performance e acessibilidade.', icon: faLaptopCode },
+        { text: 'Testes e ajustes para garantir a qualidade do projeto, verificando compatibilidade, desempenho e SEO.', icon: faClipboardCheck },
+        { text: 'Entrega final e acompanhamento para garantir que o projeto esteja funcionando conforme o esperado.', icon: faRocket }
       ]
     },
     {
       id: 'ai',
       title: 'IA',
-      icon: 'fa-solid fa-brain',
+      icon: faBrain,
       color: 'bg-gradient-to-br from-accent-purple/80 to-accent-blue/80',
       textColor: 'text-purple-300',
       description: 'Automação inteligente com IA para otimizar processos e potencializar resultados.',
       features: [
-        { name: 'Criação e otimização de prompts para melhor desempenho em IA generativa.', icon: 'fa-solid fa-pen-fancy' },
-        { name: 'Integração de IA em chatbots para modelos avançados de atendimento automatizado.', icon: 'fa-solid fa-robot' },
-        { name: 'Uso de APIs de IA como Mistral, Llama e outras para personalização e escalabilidade.', icon: 'fa-solid fa-network-wired' },
-        { name: 'Análise de dados com IA para extração de insights estratégicos para negócios.', icon: 'fa-solid fa-chart-line' }
+        { name: 'Criação e otimização de prompts para melhor desempenho em IA generativa.', icon: faPenFancy },
+        { name: 'Integração de IA em chatbots para modelos avançados de atendimento automatizado.', icon: faRobot },
+        { name: 'Uso de APIs de IA como Mistral, Llama e outras para personalização e escalabilidade.', icon: faNetworkWired },
+        { name: 'Análise de dados com IA para extração de insights estratégicos para negócios.', icon: faChartLine }
       ],
       technologies: ['GPT-4', 'Perplexity', 'OpenAI', 'APIs', 'Mistral', 'Llama'],
       workflow: [
-        { text: 'Análise do problema e identificação de oportunidades para aplicação de IA.', icon: 'fa-solid fa-magnifying-glass-chart' },
-        { text: 'Configuração de prompts, ajustes finos e integração com APIs como Mistral e LLaMA.', icon: 'fa-solid fa-keyboard' },
-        { text: 'Implementação e testes da aplicação da IA ao processo desejado, com otimização contínua.', icon: 'fa-solid fa-cogs' },
-        { text: 'Análise de resultados e verificação do desempenho para melhorias na eficiência.', icon: 'fa-solid fa-chart-column' },
-        { text: 'Entrega e suporte para garantir que o projeto esteja funcionando conforme o esperado.', icon: 'fa-solid fa-handshake' }
+        { text: 'Análise do problema e identificação de oportunidades para aplicação de IA.', icon: faMagnifyingGlassChart },
+        { text: 'Configuração de prompts, ajustes finos e integração com APIs como Mistral e LLaMA.', icon: faKeyboard },
+        { text: 'Implementação e testes da aplicação da IA ao processo desejado, com otimização contínua.', icon: faCogs },
+        { text: 'Análise de resultados e verificação do desempenho para melhorias na eficiência.', icon: faChartLine },
+        { text: 'Entrega e suporte para garantir que o projeto esteja funcionando conforme o esperado.', icon: faHandshake }
       ]
     },
     {
       id: 'chatbots',
       title: 'Chatbots',
-      icon: 'fa-solid fa-robot',
+      icon: faRobot,
       color: 'bg-gradient-to-br from-secondary-light/80 to-accent-purple/80',
       textColor: 'text-blue-300',
       description: 'Automação de atendimento para tornar sua comunicação mais ágil, eficiente e escalável.',
       features: [
-        { name: 'Chatbots para atendimento ao cliente com respostas rápidas e eficientes.', icon: 'fa-solid fa-headset' },
-        { name: 'Assistentes virtuais para dúvidas e resolução automatizada de perguntas frequentes.', icon: 'fa-brands fa-whatsapp' },
-        { name: 'Agendamentos e captação de leads com marcação de consultas, reuniões e mais.', icon: 'fa-solid fa-calendar-check' },
-        { name: 'Integração com APIs externas como WhatsApp, CRMs, e-commerce e outros sistemas.', icon: 'fa-solid fa-link' },
-        { name: 'Possível uso de IA – Modelos avançados para conversas mais naturais e inteligentes.', icon: 'fa-solid fa-brain' },
+        { name: 'Chatbots para atendimento ao cliente com respostas rápidas e eficientes.', icon: faHeadset },
+        { name: 'Assistentes virtuais para dúvidas e resolução automatizada de perguntas frequentes.', icon: faCalendarCheck },
+        { name: 'Agendamentos e captação de leads com marcação de consultas, reuniões e mais.', icon: faLink },
+        { name: 'Integração com APIs externas como WhatsApp, CRMs, e-commerce e outros sistemas.', icon: faLink },
+        { name: 'Possível uso de IA – Modelos avançados para conversas mais naturais e inteligentes.', icon: faBrain }
       ],
       technologies: ['DialogFlow', 'ChatGPT', 'Typebot', 'APIs externas', 'IA'],
       workflow: [
-        { text: 'Mapeamento das necessidades e identificação dos principais desafios e fluxos de conversa.', icon: 'fa-solid fa-sitemap' },
-        { text: 'Definição da lógica do chatbot e estruturação de interações, regras e integrações necessárias.', icon: 'fa-solid fa-diagram-project' },
-        { text: 'Desenvolvimento e testes para construção do chatbot, integração com APIs externas e testes em ambiente real.', icon: 'fa-solid fa-code-branch' },
-        { text: 'Treinamento e otimização do chatbot, ajustes no comportamento para respostas mais precisas.', icon: 'fa-solid fa-sliders' },
-        { text: 'Lançamento e acompanhamento para entrega final com suporte inicial afim de garantir o funcionamento adequado.', icon: 'fa-solid fa-rocket' }
+        { text: 'Mapeamento das necessidades e identificação dos principais desafios e fluxos de conversa.', icon: faSitemap },
+        { text: 'Definição da lógica do chatbot e estruturação de interações, regras e integrações necessárias.', icon: faDiagramProject },
+        { text: 'Desenvolvimento e testes para construção do chatbot, integração com APIs externas e testes em ambiente real.', icon: faCodeBranch },
+        { text: 'Treinamento e otimização do chatbot, ajustes no comportamento para respostas mais precisas.', icon: faSliders },
+        { text: 'Lançamento e acompanhamento para entrega final com suporte inicial afim de garantir o funcionamento adequado.', icon: faHandshake }
       ]
     }
   ];
@@ -178,7 +189,7 @@ const Services = () => {
                 }}
                 transition={{ duration: 0.5 }}
               >
-                <i className={`${service.icon} text-base ${activeTab === idx ? 'text-primary-dark' : service.textColor}`}></i>
+                <FontAwesomeIcon icon={service.icon} className={`text-base ${activeTab === idx ? 'text-primary-dark' : service.textColor}`} />
               </motion.div>
               <span className="relative z-10">{service.title}</span>
             </motion.button>
@@ -218,14 +229,7 @@ const Services = () => {
                     variants={itemVariants}
                   >
                     <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${services[activeTab].color} text-white mr-3 shadow-lg shadow-accent-purple/30`}>
-                      <motion.i 
-                        className={`${services[activeTab].icon} text-xl`}
-                        animate={{ 
-                          opacity: [0.8, 1, 0.8],
-                          filter: ["drop-shadow(0 0 0px rgba(255,255,255,0.5))", "drop-shadow(0 0 5px rgba(255,255,255,0.8))", "drop-shadow(0 0 0px rgba(255,255,255,0.5))"]
-                        }}
-                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                      ></motion.i>
+                      <FontAwesomeIcon icon={services[activeTab].icon} className="text-xl" />
                     </div>
                     <h3 className="text-xl font-bold">
                       <span style={{
@@ -270,7 +274,7 @@ const Services = () => {
                         whileHover={{ x: 5 }}
                       >
                         <div className={`mt-0.5 w-8 h-8 rounded-lg flex items-center justify-center ${services[activeTab].color} text-white mr-3 group-hover:scale-110 transition-transform shadow-lg shadow-accent-purple/20`}>
-                          <i className={`${feature.icon} text-xs`}></i>
+                          <FontAwesomeIcon icon={feature.icon} className="text-xs" />
                         </div>
                         <span className="text-white text-sm pt-1.5">{feature.name}</span>
                       </motion.li>
@@ -352,7 +356,7 @@ const Services = () => {
                             className={`w-10 h-10 rounded-full ${services[activeTab].color} flex items-center justify-center mr-4 text-primary-dark shadow-lg shadow-accent-purple/20`}
                             transition={{ duration: 0.5 }}
                           >
-                            <i className={step.icon}></i>
+                            <FontAwesomeIcon icon={step.icon} />
                           </motion.div>
                           <span className="text-white text-base">{step.text}</span>
                         </motion.li>

@@ -8,8 +8,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faPaperPlane, 
   faAddressCard,
-  faShareNodes 
+  faShareNodes,
+  faEnvelope 
 } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedinIn, faGithub, faBehance } from '@fortawesome/free-brands-svg-icons';
 
 const Contact = () => {
   const [formState, setFormState] = useState({
@@ -344,7 +346,7 @@ const Contact = () => {
                     className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary-medium/80 flex items-center justify-center mr-4 border border-white/10 shadow-lg"
                     whileHover={{ scale: 1.1 }}
                   >
-                    <i className="fa-solid fa-envelope text-accent-purple text-lg"></i>
+                    <FontAwesomeIcon icon={faEnvelope} className="text-accent-purple text-lg" />
                   </motion.div>
                   <div>
                     <p className="text-secondary-light font-medium mb-1">Email</p>
@@ -406,7 +408,7 @@ const Contact = () => {
                     className="w-12 h-12 rounded-full bg-primary-dark/80 flex items-center justify-center mb-3 text-accent-purple group-hover:bg-accent-purple group-hover:text-white transition-all duration-300"
                     transition={{ duration: 0.6 }}
                   >
-                    <i className="fa-brands fa-linkedin-in text-xl"></i>
+                    <FontAwesomeIcon icon={faLinkedinIn} className="text-xl" />
                   </motion.div>
                   <span className="text-white-soft text-sm">LinkedIn</span>
                 </motion.a>
@@ -426,7 +428,7 @@ const Contact = () => {
                     className="w-12 h-12 rounded-full bg-primary-dark/80 flex items-center justify-center mb-3 text-accent-purple group-hover:bg-accent-purple group-hover:text-white transition-all duration-300"
                     transition={{ duration: 0.6 }}
                   >
-                    <i className="fa-brands fa-github text-xl"></i>
+                    <FontAwesomeIcon icon={faGithub} className="text-xl" />
                   </motion.div>
                   <span className="text-white-soft text-sm">GitHub</span>
                 </motion.a>
@@ -446,7 +448,7 @@ const Contact = () => {
                     className="w-12 h-12 rounded-full bg-primary-dark/80 flex items-center justify-center mb-3 text-accent-purple group-hover:bg-accent-purple group-hover:text-white transition-all duration-300"
                     transition={{ duration: 0.6 }}
                   >
-                    <i className="fa-brands fa-behance text-xl"></i>
+                    <FontAwesomeIcon icon={faBehance} className="text-xl" />
                   </motion.div>
                   <span className="text-white-soft text-sm">Behance</span>
                 </motion.a>
