@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 
-const Hero = dynamic(() => import('../components/Hero'), { ssr: false });
+const Hero = dynamic(() => import('../components/Hero'));
 const About = dynamic(() => import('../components/About'), { ssr: false });
 const Skills = dynamic(() => import('../components/Skills'), { ssr: false });
 const Services = dynamic(() => import('../components/Services'), { ssr: false });
@@ -10,11 +10,11 @@ const Projects = dynamic(() => import('../components/Projects'), { ssr: false })
 const Contact = dynamic(() => import('../components/Contact'), { ssr: false });
 const Footer = dynamic(() => import('../components/Footer'), { ssr: false });
 
-const ClientWrapper = () => {
+const ClientWrapper = ({ heroImage }: { heroImage: React.ReactNode }) => {
   return (
     <>
       <section id="hero">
-        <Hero />
+        <Hero>{heroImage}</Hero>
       </section>
       <section id="projects">
         <Projects />
