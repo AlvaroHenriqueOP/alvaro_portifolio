@@ -2,11 +2,11 @@
 
 import { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
-
+import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faEnvelope, faCode, faRobot } from '@fortawesome/free-solid-svg-icons';
 
-const Hero = ({ children }) => {
+const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMounted, setIsMounted] = useState(false);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
@@ -22,40 +22,24 @@ const Hero = ({ children }) => {
   useEffect(() => {
     setIsMounted(true);
     setIsClient(true);
-
+    
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
-
-    // Função Throttle para limitar a frequência de chamadas
-    const throttle = (func, limit) => {
-      let inThrottle;
-      return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-          func.apply(context, args);
-          inThrottle = true;
-          setTimeout(() => inThrottle = false, limit);
-        }
-      }
-    }
-
+    
     const handleResize = () => {
       setWindowSize({ width: window.innerWidth, height: window.innerHeight });
     };
-
-    const throttledResize = throttle(handleResize, 100); // Executa no máximo a cada 100ms
-
+    
     window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('resize', throttledResize);
-
+    window.addEventListener('resize', handleResize);
+    
     // Inicializar o tamanho da janela
     handleResize();
-
+    
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('resize', throttledResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
   
@@ -549,7 +533,7 @@ const Hero = ({ children }) => {
           </motion.div>
         </div>
         
-                {/* Hero Image/Avatar */}
+        {/* Hero Image/Avatar */}
         <motion.div 
           className="md:w-1/2 flex justify-center items-center"
           initial={{ opacity: 0, scale: 0.8, rotate: 5 }}
@@ -563,7 +547,14 @@ const Hero = ({ children }) => {
             </div>
             
             <div className="absolute inset-4 rounded-full overflow-hidden border-2 border-accent-purple/30">
-              {children} {/* A imagem do servidor é inserida aqui */}
+              <Image
+                src="/profile/foto_perfil.jpg"
+                alt="Álvaro Henrique"
+                fill
+                className="object-cover"
+                priority
+                sizes="(max-width: 768px) 18rem, (max-width: 1280px) 24rem, 22rem"
+              />
             </div>
             
             {/* Emblemas flutuantes */}
