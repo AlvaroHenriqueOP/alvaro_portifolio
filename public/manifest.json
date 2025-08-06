@@ -1,0 +1,35 @@
+{
+  "name": "Álvaro Henrique - Desenvolvedor Front-End & Especialista em IA",
+  "short_name": "Álvaro Henrique",
+  "description": "Portfólio de Álvaro Henrique - Desenvolvedor front-end especializado em React, Next.js e IA conversacional",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1426",
+  "theme_color": "#0086A8",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt-BR",
+  "categories": ["portfolio", "developer", "technology"],
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/profile/foto_perfil.jpg",
+      "sizes": "800x800",
+      "type": "image/jpeg",
+      "label": "Álvaro Henrique - Desenvolvedor Front-End"
+    }
+  ]
+}

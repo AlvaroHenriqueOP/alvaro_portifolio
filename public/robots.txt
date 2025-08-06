@@ -1,0 +1,30 @@
+# Robots.txt - Álvaro Henrique Portfolio
+# https://alvaro-portifolio-ten.vercel.app/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://alvaro-portifolio-ten.vercel.app/sitemap.xml
+
+# Crawl-delay for better server performance
+Crawl-delay: 1
+
+# Specific rules for common bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block access to sensitive files (if any in future)
+Disallow: /api/
+Disallow: /_next/static/chunks/
+Disallow: /admin/
+
+# Allow access to important files
+Allow: /profile/
+Allow: /projects/
+Allow: /PDFs/ÁLVARO_PRIVADO_CV.pdf

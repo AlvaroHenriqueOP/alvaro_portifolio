@@ -50,7 +50,7 @@ const Projects = () => {
         { type: 'image', src: '/projects/project2/clinica6.png' },
       ],
       thumbnail: '/projects/project2/clinica1.png', 
-      link: 'https://projeto-clinica-ko1uofkkk-alvarohenriqueops-projects.vercel.app/'
+      link: 'https://projeto-clinica-ten.vercel.app/'
     },
     {
       id: 3,
