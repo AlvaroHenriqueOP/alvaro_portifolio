@@ -5,40 +5,15 @@ export default function StructuredData() {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Álvaro Henrique",
-    "givenName": "Álvaro",
-    "familyName": "Henrique",
     "jobTitle": "Desenvolvedor Front-End & Especialista em IA",
-    "description": "Desenvolvedor front-end especializado em React, Next.js e IA conversacional. Criador de interfaces interativas, chatbots inteligentes e soluções web inovadoras.",
+    "description": "Desenvolvedor front-end especializado em React, Next.js e IA conversacional.",
     "url": "https://alvaro-portifolio-ten.vercel.app",
     "image": "https://alvaro-portifolio-ten.vercel.app/profile/foto_perfil.jpg",
     "email": "alvaro.hop.ah@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Salvador",
-      "addressRegion": "Bahia",
-      "addressCountry": "BR"
-    },
     "sameAs": [
       "https://github.com/AlvaroHenriqueOP",
       "https://www.linkedin.com/in/alvaro-henrique-dev/"
-    ],
-    "knowsAbout": [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "JavaScript",
-      "Tailwind CSS",
-      "Framer Motion",
-      "Inteligência Artificial",
-      "Chatbots",
-      "UI/UX Design",
-      "Desenvolvimento Web",
-      "Frontend Development"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Freelancer"
-    }
+    ]
   }
 
   const websiteSchema = {

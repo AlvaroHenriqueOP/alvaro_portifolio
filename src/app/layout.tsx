@@ -99,10 +99,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${poppins.variable} ${montserrat.variable}`}>
-      <head>
-        <StructuredData />
-      </head>
       <body className="antialiased">
+        <StructuredData />
         {children}
       </body>
     </html>

@@ -1,8 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Performance optimizations
-  swcMinify: true,
+  // Performance optimizations  
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
   },
@@ -20,7 +19,6 @@ const nextConfig: NextConfig = {
   
   // Bundle optimizations
   experimental: {
-    optimizeCss: true,
     scrollRestoration: true,
   },
   
