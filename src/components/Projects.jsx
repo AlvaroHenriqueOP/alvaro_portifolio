@@ -159,6 +159,10 @@ const Projects = () => {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   style={{ objectFit: 'cover' }}
                   className={`transition-transform duration-500 ease-in-out ${hoveredCard === project.id ? 'scale-110' : 'scale-100'}`}
+                  quality={75}
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyEkd2eZvvTv5fIjjuQxDmuKqiuNpjg3eBZPHMQgzWnZMPBCNJpjhCo4VXEcmHn9EW9ePHhNJNPJMREH9JoJJ2W8WOvFdG2QYjqCXBGEvUUfxMhJl1MqDHxAYyQCvHahNqH7vKw/0l/bY8e8hVmcMTzjVk+9/WKC4OQAEFz/9k="
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                 <span className="absolute top-3 right-3 px-2 py-0.5 rounded-full text-xs text-accent-blue bg-accent-blue/10 border border-accent-blue/30">{project.category}</span>
@@ -222,6 +226,8 @@ const Projects = () => {
                             sizes="(max-width: 768px) 100vw, 60vw"
                             style={{ objectFit: 'contain' }}
                             className="cursor-pointer rounded-lg p-4"
+                            quality={80}
+                            loading="lazy"
                             onClick={(e) => { e.stopPropagation(); window.open(selectedProject.media[currentImageIndex].src, '_blank'); }}
                           />
                         </motion.div>
@@ -277,6 +283,8 @@ const Projects = () => {
                             fill
                             sizes="112px"
                             style={{ objectFit: 'cover' }}
+                            quality={60}
+                            loading="lazy"
                           />
                           {item.type === 'video' && (
                             <div className="absolute inset-0 flex items-center justify-center bg-black/40">

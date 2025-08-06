@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,30 +18,55 @@ const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   
+  // Callbacks memoizados para performance
+  const handleMouseMove = useCallback((e) => {
+    setMousePosition({ x: e.clientX, y: e.clientY });
+  }, []);
+  
+  const handleResize = useCallback(() => {
+    setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+  }, []);
+
   // Efeito para inicialização e rastreamento do mouse para animações interativas
   useEffect(() => {
     setIsMounted(true);
     setIsClient(true);
     
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    // Throttle mouse move for better performance
+    let mouseTimeout;
+    const throttledMouseMove = (e) => {
+      if (!mouseTimeout) {
+        mouseTimeout = setTimeout(() => {
+          handleMouseMove(e);
+          mouseTimeout = null;
+        }, 16); // ~60fps
+      }
     };
     
-    const handleResize = () => {
-      setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+    // Throttle resize for better performance
+    let resizeTimeout;
+    const throttledResize = () => {
+      if (!resizeTimeout) {
+        resizeTimeout = setTimeout(() => {
+          handleResize();
+          resizeTimeout = null;
+        }, 250);
+      }
     };
     
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('mousemove', throttledMouseMove, { passive: true });
+    window.addEventListener('resize', throttledResize, { passive: true });
     
     // Inicializar o tamanho da janela
     handleResize();
     
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', throttledMouseMove);
+      window.removeEventListener('resize', throttledResize);
+      if (mouseTimeout) clearTimeout(mouseTimeout);
+      if (resizeTimeout) clearTimeout(resizeTimeout);
     };
-  }, []);
+  }, [handleMouseMove, handleResize]);
   
   // Efeito de digitação
   useEffect(() => {
@@ -109,20 +134,22 @@ const Hero = () => {
     };
   }, [mousePosition, windowSize, isMounted]);
 
-  // Gerar nós de rede para animação do background
+  // Gerar nós de rede para animação do background (otimizado)
   const networkNodes = useMemo(() => {
     if (!isClient) return [];
-    const nodeCount = Math.min(Math.floor((windowSize.width || 1000) / 100), 15);
+    const nodeCount = Math.min(Math.floor((windowSize.width || 1000) / 150), 12); // Reduzido para melhor performance
     return Array.from({ length: nodeCount }).map((_, i) => {
-      const xPos = 5 + Math.random() * 90; // 5-95% da largura
-      const yPos = 5 + Math.random() * 90; // 5-95% da altura
-      const size = 3 + Math.random() * 5;
+      // Use seed fixo para evitar recálculo desnecessário
+      const seed = i * 0.618033988749895; // golden ratio
+      const xPos = 10 + ((seed * 100) % 80); // 10-90% da largura
+      const yPos = 10 + (((seed + 0.5) * 100) % 80); // 10-90% da altura
+      const size = 3 + ((seed * 10) % 4);
       
       return {
         id: i,
         position: { x: xPos, y: yPos },
         size,
-        pulseDelay: i * 0.2,
+        pulseDelay: i * 0.3,
         connections: [] // Será preenchido depois
       };
     });
@@ -165,20 +192,22 @@ const Hero = () => {
     return connections;
   }, [networkNodes, isClient]);
 
-  // Gerar partículas de dados flutuantes para efeito tecnológico
+  // Gerar partículas de dados flutuantes para efeito tecnológico (otimizado)
   const dataParticles = useMemo(() => {
     if (!isClient) return [];
-    const count = 8;
+    const count = 6; // Reduzido para melhor performance
     return Array.from({ length: count }).map((_, i) => {
+      // Use seed fixo baseado no índice
+      const seed = i * 0.741649122807018; // random seed
       return {
         id: i,
         startPosition: {
-          x: Math.random() * 100,
-          y: Math.random() * 100
+          x: (seed * 100) % 100,
+          y: ((seed + 0.33) * 100) % 100
         },
-        speed: 15 + Math.random() * 25,
-        size: 1 + Math.random() * 2,
-        opacity: 0.3 + Math.random() * 0.3,
+        speed: 15 + ((seed * 25) % 20),
+        size: 1 + ((seed * 3) % 2),
+        opacity: 0.3 + ((seed * 0.4) % 0.3),
         color: i % 3 === 0 
           ? "rgba(117, 71, 255, 0.5)" // accent-purple
           : i % 2 === 0 
@@ -234,7 +263,7 @@ const Hero = () => {
   if (!isClient) return null;
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-primary-dark py-20 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 4xl:px-20">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-primary-dark py-20 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 4xl:px-20 will-change-transform contain-layout">
       {/* Background com nova animação elaborada */}
       <div className="absolute inset-0 bg-primary-dark">
         {/* Camada base com gradiente sutil animado */}
@@ -553,6 +582,9 @@ const Hero = () => {
                 fill
                 className="object-cover"
                 priority
+                quality={85}
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyEkd2eZvvTv5fIjjuQxDmuKqiuNpjg3eBZPHMQgzWnZMPBCNJpjhCo4VXEcmHn9EW9ePHhNJNPJMREH9JoJJ2W8WOvFdG2QYjqCXBGEvUUfxMhJl1MqDHxAYyQCvHahNqH7vKw/0l/bY8e8hVmcMTzjVk+9/WKC4OQAEFz/9k="
                 sizes="(max-width: 768px) 18rem, (max-width: 1280px) 24rem, 22rem"
               />
             </div>
