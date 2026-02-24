@@ -32,39 +32,15 @@ const Hero = () => {
     setIsMounted(true);
     setIsClient(true);
     
-    // Throttle mouse move for better performance
-    let mouseTimeout;
-    const throttledMouseMove = (e) => {
-      if (!mouseTimeout) {
-        mouseTimeout = setTimeout(() => {
-          handleMouseMove(e);
-          mouseTimeout = null;
-        }, 16); // ~60fps
-      }
-    };
-    
-    // Throttle resize for better performance
-    let resizeTimeout;
-    const throttledResize = () => {
-      if (!resizeTimeout) {
-        resizeTimeout = setTimeout(() => {
-          handleResize();
-          resizeTimeout = null;
-        }, 250);
-      }
-    };
-    
-    window.addEventListener('mousemove', throttledMouseMove, { passive: true });
-    window.addEventListener('resize', throttledResize, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('resize', handleResize);
     
     // Inicializar o tamanho da janela
     handleResize();
     
     return () => {
-      window.removeEventListener('mousemove', throttledMouseMove);
-      window.removeEventListener('resize', throttledResize);
-      if (mouseTimeout) clearTimeout(mouseTimeout);
-      if (resizeTimeout) clearTimeout(resizeTimeout);
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', handleResize);
     };
   }, [handleMouseMove, handleResize]);
   
@@ -263,7 +239,7 @@ const Hero = () => {
   if (!isClient) return null;
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-primary-dark py-20 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 4xl:px-20 will-change-transform contain-layout">
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-primary-dark py-20 px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 4xl:px-20">
       {/* Background com nova animação elaborada */}
       <div className="absolute inset-0 bg-primary-dark">
         {/* Camada base com gradiente sutil animado */}
@@ -582,9 +558,6 @@ const Hero = () => {
                 fill
                 className="object-cover"
                 priority
-                quality={85}
-                placeholder="blur"
-                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyEkd2eZvvTv5fIjjuQxDmuKqiuNpjg3eBZPHMQgzWnZMPBCNJpjhCo4VXEcmHn9EW9ePHhNJNPJMREH9JoJJ2W8WOvFdG2QYjqCXBGEvUUfxMhJl1MqDHxAYyQCvHahNqH7vKw/0l/bY8e8hVmcMTzjVk+9/WKC4OQAEFz/9k="
                 sizes="(max-width: 768px) 18rem, (max-width: 1280px) 24rem, 22rem"
               />
             </div>

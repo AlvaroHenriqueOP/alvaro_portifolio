@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins, Montserrat } from 'next/font/google';
 import "./globals.css";
-import StructuredData from '../components/StructuredData';
 
 const siteConfig = {
   title: "Álvaro Henrique | Desenvolvedor Front-End & Especialista em IA",
@@ -100,7 +99,6 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${poppins.variable} ${montserrat.variable}`}>
       <body className="antialiased">
-        <StructuredData />
         {children}
       </body>
     </html>

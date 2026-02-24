@@ -9,6 +9,7 @@ const Services = dynamic(() => import('../components/Services'), { ssr: false })
 const Projects = dynamic(() => import('../components/Projects'), { ssr: false });
 const Contact = dynamic(() => import('../components/Contact'), { ssr: false });
 const Footer = dynamic(() => import('../components/Footer'), { ssr: false });
+const Chatbot = dynamic(() => import('./chatbot/Chatbot'), { ssr: false });
 
 const ClientWrapper = () => {
   return (
@@ -32,6 +33,7 @@ const ClientWrapper = () => {
         <Contact />
       </section>
       <Footer />
+      <Chatbot />
     </>
   );
 };
