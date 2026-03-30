@@ -13,7 +13,7 @@ const Hero = () => {
   const [isClient, setIsClient] = useState(false);
   
   // Array de habilidades para o efeito de digitação (sem Desenvolvedor Front-End, que será fixo)
-  const skills = ['Especialista em IA', 'Designer UX/UI', 'Especialista em Chatbots'];
+  const skills = ['Estudante da UFBA', 'Estudante de IA', 'Designer UX/UI', 'Desenvolvedor de Chatbots'];
   const [currentSkillIndex, setCurrentSkillIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -505,8 +505,8 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            Transformando ideias em experiências digitais memoráveis. 
-            Especializado em desenvolvimento front-end, inteligência artificial, criação de chatbots e interfaces interativas.
+            Meu intuito é criar experiências digitais com design e tecnologia. 
+            Foco em desenvolvimento front-end, inteligência artificial, criação de chatbots, automações e interfaces interativas.
           </motion.p>
             
           <motion.div 

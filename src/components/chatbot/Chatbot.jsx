@@ -45,6 +45,10 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
+      // 003: Limitar histórico para as últimas 10 mensagens (5 interações) 
+      // para evitar estouro limite de tokens da Janela de Contexto (Context Window) da IA
+      const recentMessages = messages.slice(-10);
+
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
@@ -52,7 +56,7 @@ const Chatbot = () => {
         },
         body: JSON.stringify({
           messages: [
-            ...messages.map(msg => ({
+            ...recentMessages.map(msg => ({
               role: msg.sender === 'user' ? 'user' : 'assistant',
               content: msg.text
             })),
@@ -62,7 +66,8 @@ const Chatbot = () => {
       });
 
       if (!response.ok) {
-        throw new Error('Erro na resposta da API');
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData.error || `Erro de código ${response.status} na resposta da API`);
       }
 
       const data = await response.json();
@@ -97,9 +102,7 @@ const Chatbot = () => {
 
   const toggleChat = () => {
     setIsOpen(!isOpen);
-    if (!isOpen) {
-      setMessages([]);
-    }
+    // O histórico de mensagens agora é preservado ao abrir e fechar a janela
   };
 
   return (
@@ -135,7 +138,7 @@ const Chatbot = () => {
                 <FontAwesomeIcon icon={faRobot} className="text-xl" />
               </div>
               <div>
-                <h3 className="font-semibold text-lg">Assistente Virtual</h3>
+                <h3 className="font-semibold text-lg">Assistente Tom</h3>
                 <p className="text-sm text-white/80">Como posso ajudar?</p>
               </div>
             </div>

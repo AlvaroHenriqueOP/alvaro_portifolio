@@ -87,16 +87,30 @@ const Projects = () => {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  // 005: Controlar scroll via useEffect garantindo limpeza em todos os desmontes
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      if (selectedProject) {
+        document.body.style.overflow = 'hidden';
+      } else {
+        document.body.style.overflow = 'auto';
+      }
+    }
+    return () => {
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = 'auto';
+      }
+    };
+  }, [selectedProject]);
+
   const openModal = (project) => {
     setSelectedProject(project);
     setCurrentImageIndex(0);
-    if (typeof window !== 'undefined') document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     if (videoRef.current) videoRef.current.pause();
     setSelectedProject(null);
-    if (typeof window !== 'undefined') document.body.style.overflow = 'auto';
   };
 
   const nextImage = () => {

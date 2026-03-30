@@ -157,21 +157,14 @@ const About = () => {
                   className="text-white/80 text-lg leading-relaxed mb-4 xl:text-lg xl:leading-relaxed xl:mb-5"
                   variants={itemVariants}
                 >
-                  Sou um desenvolvedor front-end apaixonado por transformar ideias criativas em interfaces digitais modernas e interativas. Meu foco é combinar design atraente com código limpo e eficiente para criar experiências web memoráveis.
+                  Sou um Desenvolvedor Front-End com forte base em Inteligência de Mercado. Diferente do dev tradicional, minha vivência comercial em grandes projetos de Engenharia me ensinou na prática: o código só tem valor real se impulsionar a eficiência operacional e os resultados financeiros da empresa
                 </motion.p>
                 
                 <motion.p 
                   className="text-white/80 text-lg leading-relaxed mb-4 xl:text-lg xl:leading-relaxed xl:mb-5"
                   variants={itemVariants}
                 >
-                  Com expertise em React, Next.js e tecnologias modernas de frontend, também aplico meus conhecimentos em inteligência artificial para desenvolver soluções conversacionais avançadas e interfaces mais inteligentes.
-                </motion.p>
-                
-                <motion.p 
-                  className="text-white/80 text-lg leading-relaxed xl:text-lg xl:leading-relaxed"
-                  variants={itemVariants}
-                >
-                  Acredito que o futuro da web está na combinação de design centrado no usuário, performance técnica e integração com IA, criando experiências que não apenas funcionem bem, mas também encantem e surpreendam os usuários.
+                 Construo interfaces web escaláveis com React, Python e Next.js e implemento automações com IA conversacional. Meu foco é desenvolver soluções que vão além do visual, criando ecossistemas integrados via APIs que conectam o front-end diretamente a sistemas de gestão, automatizando fluxos e otimizando o suporte.
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -269,25 +262,25 @@ const About = () => {
                   icon: faCode,
                   color: "text-accent-blue",
                   title: "Desenvolvimento Front-end",
-                  text: "Criação de interfaces responsivas e acessíveis com React, Next.js, TailwindCSS, CSS, HTML, JavaScript e outras tecnologias modernas."
+                  text: "Criação de aplicações web escaláveis e de alta performance com React e Next.js, transformando requisitos de negócios em interfaces rápidas e focadas em conversão."
                 },
                 {
                   icon: faRobot,
                   color: "text-accent-purple",
-                  title: "Inteligência Artificial",
-                  text: "Implementação de modelos de IA para criar experiências interativas mais inteligentes e personalizadas."
+                  title: "Automação com IA",
+                  text: "Implementação de agentes de Inteligência Artificial para automatizar fluxos operacionais, reduzindo tarefas manuais e otimizando processos internos"
                 },
                 {
                   icon: faPaintBrush,
                   color: "text-secondary-light",
-                  title: "UI/UX Design",
-                  text: "Design de interfaces focadas na experiência do usuário, com atenção a detalhes visuais e usabilidade."
+                  title: "CRM & Análise de Dados",
+                  text: "Estruturação de operações no HubSpot e modelagem de dashboards no Power BI, transformando dados brutos em previsibilidade e direcionamento estratégico."
                 },
                 {
                   icon: faComments,
                   color: "text-accent-blue",
-                  title: "Chatbots",
-                  text: "Desenvolvimento de soluções conversacionais inteligentes para automação e melhoria do atendimento."
+                  title: "Chatbots & Integrações",
+                  text: "Desenvolvimento de soluções conversacionais integradas diretamente ao seu ecossistema (CRM/APIs) para qualificar leads e automatizar o atendimento 24/7."
                 }
               ].map((specialty, index) => (
                 <motion.div 

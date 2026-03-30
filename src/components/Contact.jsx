@@ -23,7 +23,6 @@ const Contact = () => {
     error: null
   });
   
-  const [focusedField, setFocusedField] = useState(null);
   const formRef = useRef(null);
   const isInView = useInView(formRef, { once: false, amount: 0.3 });
 
@@ -33,14 +32,6 @@ const Contact = () => {
       ...prev,
       [name]: value
     }));
-  };
-
-  const handleFocus = (field) => {
-    setFocusedField(field);
-  };
-  
-  const handleBlur = () => {
-    setFocusedField(null);
   };
 
   const handleSubmit = async (e) => {
@@ -53,10 +44,9 @@ const Contact = () => {
 
     setFormState(prev => ({ ...prev, submitting: true, error: null }));
 
-    // IMPORTANTE: Substitua com suas credenciais do EmailJS
-    const serviceID = 'service_25ohged';
-    const templateID = 'template_7f94hve';
-    const publicKey = 'F7AuL3UIwr5aaDQIZ';
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
     try {
       await emailjs.sendForm(serviceID, templateID, formRef.current, publicKey);
@@ -176,8 +166,6 @@ const Contact = () => {
                     name="name"
                     value={formState.name}
                     onChange={handleChange}
-                    onFocus={() => handleFocus('name')}
-                    onBlur={handleBlur}
                     required
                     className={`w-full bg-primary-dark/80 border ${formState.error && 'border-red-500'} rounded-lg px-4 py-3 text-white-soft focus:outline-none focus:ring-2 focus:ring-accent-blue/50 focus:border-transparent transition-all duration-300 placeholder-white-muted/50 xl:px-5 xl:py-4 xl:text-lg`}
                     placeholder="Seu nome"
@@ -193,8 +181,6 @@ const Contact = () => {
                     name="email"
                     value={formState.email}
                     onChange={handleChange}
-                    onFocus={() => handleFocus('email')}
-                    onBlur={handleBlur}
                     required
                     className={`w-full bg-primary-dark/80 border ${formState.error && 'border-red-500'} rounded-lg px-4 py-3 text-white-soft focus:outline-none focus:ring-2 focus:ring-accent-blue/50 focus:border-transparent transition-all duration-300 placeholder-white-muted/50 xl:px-5 xl:py-4 xl:text-lg`}
                     placeholder="Seu email"
@@ -210,8 +196,6 @@ const Contact = () => {
                   name="message"
                   value={formState.message}
                   onChange={handleChange}
-                  onFocus={() => handleFocus('message')}
-                  onBlur={handleBlur}
                   required
                   rows="5"
                   className={`w-full bg-primary-dark/80 border ${formState.error && 'border-red-500'} rounded-lg px-4 py-3 text-white-soft focus:outline-none focus:ring-2 focus:ring-accent-blue/50 focus:border-transparent transition-all duration-300 placeholder-white-muted/50 xl:px-5 xl:py-4 xl:text-lg`}
