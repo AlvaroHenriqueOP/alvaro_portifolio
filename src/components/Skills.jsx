@@ -8,10 +8,11 @@ import {
   faCode, faBrain, faRobot, faKeyboard, faBolt, 
   faServer, faWind, faSearch, faImage, faBookOpen, faLanguage, faCommentDots, 
   faPlug, faLink, faSitemap, faNetworkWired, faComments, 
-  faTerminal, faPaperPlane, faCubes
+  faTerminal, faPaperPlane, faCubes, faChartLine, faChartSimple, faTable, faMagnifyingGlassChart,
+  faDatabase, faHeadset, faCogs, faUserCheck, faTimeline
 } from '@fortawesome/free-solid-svg-icons';
-import { 
-  faReact, faJs, faHtml5, faCss3Alt, faGitAlt, faGithub, faNpm, faFigma 
+import {
+  faReact, faJs, faHtml5, faCss3Alt, faGitAlt, faGithub, faNpm, faFigma, faPython, faHubspot
 } from '@fortawesome/free-brands-svg-icons';
 
 const Skills = () => {
@@ -40,41 +41,54 @@ const Skills = () => {
       skills: [
         { name: 'React', icon: faReact },
         { name: 'Next.js', icon: faBolt },
+        { name: 'TypeScript', icon: faCode },
         { name: 'JavaScript', icon: faJs },
-        { name: 'HTML5', icon: faHtml5 },
-        { name: 'CSS3', icon: faCss3Alt },
+        { name: 'Tailwind CSS', icon: faWind },
         { name: 'Vercel', icon: faServer },
-        { name: 'Tailwind', icon: faWind }
+        { name: 'Figma', icon: faFigma }
       ]
     },
     {
       id: 'ia',
-      title: 'Inteligência Artificial',
+      title: 'IA & Automação',
       icon: faBrain,
       color: 'from-accent-purple/90 to-secondary-light/90',
       skills: [
+        { name: 'OpenAI API', icon: faRobot },
         { name: 'Prompt Engineering', icon: faKeyboard },
-        { name: 'LLMs', icon: faBrain },
-        { name: 'GPT', icon: faRobot },
-        { name: 'Perplexity', icon: faSearch },
-        { name: 'Ideogram', icon: faImage },
-        { name: 'Notebook LM', icon: faBookOpen },
-        { name: 'NLP', icon: faLanguage }
+        { name: 'Agentes Inteligentes', icon: faBrain },
+        { name: 'LLMs Customizados', icon: faDatabase },
+        { name: 'Integrações REST', icon: faPlug },
+        { name: 'Autom. de Fluxos', icon: faCogs },
+        { name: 'Vector DBs', icon: faServer }
       ]
     },
     {
       id: 'chatbots',
-      title: 'Chatbots',
-      icon: faRobot,
+      title: 'Chatbots & Integ.',
+      icon: faComments,
       color: 'from-secondary-light/90 to-accent-purple/90',
       skills: [
-        { name: 'DialogFlow', icon: faCommentDots },
-        { name: 'ChatGPT API', icon: faPlug },
-        { name: 'Webhook', icon: faLink },
         { name: 'Typebot', icon: faSitemap },
-        { name: 'APIs externas', icon: faNetworkWired },
-        { name: 'IA Conversacional', icon: faBrain },
-        { name: 'UX Conversacional', icon: faComments }
+        { name: 'DialogFlow', icon: faCommentDots },
+        { name: 'Make & n8n', icon: faTimeline },
+        { name: 'Webhooks', icon: faLink },
+        { name: 'Zendesk API', icon: faHeadset },
+        { name: 'Qualificação Leads', icon: faUserCheck },
+        { name: 'Conversational UX', icon: faComments }
+      ]
+    },
+    {
+      id: 'dados',
+      title: 'CRM & Dados',
+      icon: faChartLine,
+      color: 'from-accent-blue/90 to-accent-purple/90',
+      skills: [
+        { name: 'HubSpot', icon: faHubspot },
+        { name: 'Power BI', icon: faChartSimple },
+        { name: 'Python', icon: faPython },
+        { name: 'Data Analysis', icon: faMagnifyingGlassChart },
+        { name: 'Excel', icon: faTable }
       ]
     }
   ];

@@ -19,9 +19,9 @@ const Projects = () => {
       id: 1,
       title: 'Portfólio Social Media',
       category: 'Website',
-      description: 'Portfólio responsivo para uma Social Media, com foco em apresentar seus trabalhos de forma visual, profissional e interativa.',
-      fullDescription: 'Desenvolvimento de um portfólio responsivo e interativo para a profissional Natalia Gomes, permitindo a exibição de trabalhos em um layout moderno e visualmente atraente. O projeto incluiu animações de transição, filtros de categoria e integração com API para atualização dinâmica de conteúdo.',
-      technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Figma', 'JavaScript', 'API'],
+      description: 'Desenvolvimento de site focado em Branding Pessoal para profissionais. Estruturado não apenas como álbum visual, mas como ferramenta de captação.',
+      fullDescription: 'Construção de uma landing page sofisticada de captura para a especialista Natalia Gomes. A arquitetura foi montada visando a exibição fluida e imersiva dos cases de negócio, incluindo transições orgânicas de renderização (React Lifecycle) e integração com API para atualização de portfólio em tempo real. O resultado destaca a senioridade da profissional, converte tráfego com velocidade otimizada e atrai novos prospectos por meio de UX Design de alta absorção.',
+      technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'Figma', 'JavaScript', 'Integração de APIs'],
       media: [
         { type: 'image', src: '/projects/project1/portifolio1.png' },
         { type: 'image', src: '/projects/project1/portifolio2.png' },
@@ -36,10 +36,10 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Clínica Odontológica',
+      title: 'Plataforma Clínica',
       category: 'Website',
-      description: 'Site para uma clínica odontológica, com foco em apresentar seus serviços, equipe, interior da clínica e agendar consultas.',
-      fullDescription: 'Desenvolvi um site para a clínica odontológica fictícia Dental Corp, com foco em apresentar seus serviços, blog, equipe, interior da clínica e agendamento de consultas. O projeto inclui uma interface moderna e responsiva feita com React e Next.JS, com um design minimalista e uma navegação intuitiva. O site possui um sistema de agendamento de consultas, com integração com o calendário Google e também possui um sistema de blog para atualização dinâmica de conteúdo.',
+      description: 'Plataforma Web para Health Tech focada em UX flow e conversão, com sistema nativo de agendamento de consultas diretas e gestão médica.',
+      fullDescription: 'Concepção de um ecossistema front-end robusto para a clínica fictícia Dental Corp, operando como motor de captação de marcações ativas. A solução entrega alto valor comercial ao transcender a típica "vitrine estática": ela é acoplada assincronamente ao Google Calendar API, provendo aos usuários autonomia total num checkout de reservas inteligente validado por arquitetura React.\nO projeto ostenta design minimalista e uma engenharia de Core Web Vitals rígida voltada para retenção e ranqueamento on-page (SEO) maximizando o engajamento orgânico dos pacientes perante buscas geolocalizadas.',
       technologies: ['React', 'Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Google Calendar API', 'Google Maps API'],
       media: [
         { type: 'image', src: '/projects/project2/clinica1.png' },
@@ -54,11 +54,11 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: 'Chatbot de Atendimento',
+      title: 'Assistente Virtual (CX)',
       category: 'Chatbot',
-      description: 'Chatbot de atendimento para uma empresa de energia solar, com foco em tirar dúvidas técnicas, consultar um especialista via API do Zendesk e responder perguntas frequentes.',
-      fullDescription: 'Criação de um chatbot não oficial de atendimento para a empresa de energia solar SolFácil, com foco em tirar dúvidas técnicas, consultar um especialista via API do Zendesk e responder perguntas frequentes. O chatbot pode ser integrado com o site da empresa e com o Zendesk para atender as solicitações dos clientes. Foi desenvolvido pelo Typebot com chamadas de APIs para o Zendesk e para coleta de avaliações dos clientes para uma planilha do Google Sheets.',
-      technologies: ['Typebot', 'Google Sheets', 'Zendesk API', 'Typebot API', 'WebHook', 'API'],
+      description: 'Assistente Integrado de suporte para reduzir gargalos manuais, qualificando pré-vendas e resolvendo o atendimento Tier 1 dos canais web.',
+      fullDescription: 'Implementação de uma árvore interativa de suporte automatizado arquitetada para a distribuidora em energia solar SolFácil (Case prático corporativo - não oficial). Este chatbot atua ativamente, absorvendo e eliminando o suporte repetitivo manual da equipe através de conectores Webhook avançados que alimentam planilhas de Business Intelligence e criam tickets nativos na API do Zendesk. Caso a solicitação fuja das soluções passivas da IA, o operador recebe o contexto instantaneamente e centralizado, salvando horas das mesas técnicas e qualificando os dados do Lead (Customer Experience) com atrito zero.',
+      technologies: ['Automação Nocode', 'Typebot Flow', 'Google Sheets', 'Zendesk API', 'Webhooks e Rest'],
       media: [
         { type: 'image', src: '/projects/project3/chatbot1.png' },
         { type: 'image', src: '/projects/project3/chatbot2.png' },
@@ -70,6 +70,21 @@ const Projects = () => {
       thumbnail: '/projects/project3/chatbot1.png',
       link: 'https://typebot.co/bot-solfacil-qodlez0'
     },
+    {
+      id: 4,
+      title: 'Fast-Entry (HubSpot CRM)',
+      category: 'Automação',
+      description: 'Painel ágil para cadastro e alimentação de base de leads no HubSpot eliminando necessidade de novas licenças pagas da ferramenta.',
+      fullDescription: 'Desenvolvimento de uma interface customizada para Input de contatos e logs diários que se comunica diretamente com o núcleo do CRM HubSpot por baixo dos panos (via APIs e orquestrações). Ele substitui de ponta a ponta a necessidade da equipe de abrir o modelo padronizado do aplicativo original, mitigando retrabalhos visuais.\nO ganho de eficiência e financeiro real ocorre por não exigir que você compre licenças (assentos pagos de SaaS) para contas operacionais do time técnico apenas para permiti-los de criar ou subir contatos na base, gerando agilidade extrema diária no fluxo de trabalho e redução severa de custos base em CRM corporativo.',
+      technologies: ['HubSpot API', 'Make / Zapier', 'Automação B2B', 'UX Engineering', 'Webhooks'],
+      media: [
+        { type: 'image', src: '/projects/project4/hubspot1.png' },
+        { type: 'image', src: '/projects/project4/hubspot2.png' },
+        { type: 'image', src: '/projects/project4/hubspot3.png' }
+      ],
+      thumbnail: '/projects/project4/hubspot1.png',
+      link: ''
+    }
   ];
 
   const filteredProjects = filterCategory === 'all' 
@@ -322,15 +337,17 @@ const Projects = () => {
                       ))}
                     </div>
                   </div>
-                  <a
-                    href={selectedProject.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 flex-shrink-0 inline-flex items-center justify-center w-full px-6 py-4 rounded-xl bg-gradient-to-r from-accent-purple via-accent-blue to-accent-purple text-white text-lg font-bold shadow-xl shadow-accent-blue/40 border-2 border-accent-blue/40 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-accent-blue/40 relative overflow-hidden group hover:scale-[1.03] hover:shadow-2xl"
-                  >
-                    <span className="mr-3">Ver Projeto Online</span>
-                    <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-base group-hover:animate-pulse" />
-                  </a>
+                  {selectedProject.link && (
+                    <a
+                      href={selectedProject.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 flex-shrink-0 inline-flex items-center justify-center w-full px-6 py-4 rounded-xl bg-gradient-to-r from-accent-purple via-accent-blue to-accent-purple text-white text-lg font-bold shadow-xl shadow-accent-blue/40 border-2 border-accent-blue/40 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-accent-blue/40 relative overflow-hidden group hover:scale-[1.03] hover:shadow-2xl"
+                    >
+                      <span className="mr-3">Ver Projeto Online</span>
+                      <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="text-base group-hover:animate-pulse" />
+                    </a>
+                  )}
                 </div>
             </motion.div>
           </div>

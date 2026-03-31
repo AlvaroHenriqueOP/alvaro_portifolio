@@ -25,65 +25,87 @@ const Services = () => {
       icon: faCode,
       color: 'bg-gradient-to-br from-secondary-light/80 to-accent-blue/80',
       textColor: 'text-cyan-300',
-      description: 'Criação de landing pages com tecnologias modernas, responsivas e otimizadas para oferecer a melhor experiência ao usuário e melhorar a conversão.',
+      description: 'Desenvolvimento de sistemas web, dashboards e landing pages voltados para performance e taxa de conversão, traduzindo as necessidades do negócio em interfaces interativas de ponta.',
       features: [
-        { name: 'Desenvolvimento com React & Next.js para aplicações rápidas e dinâmicas.', icon: faReact },
-        { name: 'Design Mobile First para interfaces adaptáveis em todos os dispositivos.', icon: faMobileScreen },
-        { name: 'Otimização para SEO para melhor visibilidade nos motores de busca.', icon: faMagnifyingGlass },
-        { name: 'Integração com APIs para funcionalidades avançadas.', icon: faPlug }
+        { name: 'Autoria em React e Next.js entregando arquiteturas robustas e escaláveis.', icon: faReact },
+        { name: 'UI/UX focado em experiência de usuário impecável e usabilidade perfeita.', icon: faMobileScreen },
+        { name: 'Integração completa de APIs e back-ends mantendo a segurança e fluidez dos dados.', icon: faPlug },
+        { name: 'Otimização pesada de métricas (SEO/Core Web Vitals) para aumento de conversão.', icon: faMagnifyingGlass }
       ],
-      technologies: ['React', 'Next.js', 'TailwindCSS', 'CSS', 'HTML', 'JavaScript'],
+      technologies: ['React', 'Next.js', 'TypeScript', 'TailwindCSS', 'Figma', 'Rest APIs'],
       workflow: [
-        { text: 'Entrevista para compreender a identidade da marca e objetivos do site.', icon: faComments },
-        { text: 'Definição do layout e experiência do usuário afim de estruturar a interface pensando em acessibilidade e responsividade.', icon: faPencilRuler },
-        { text: 'Desenvolvimento do front-end com foco em performance e acessibilidade.', icon: faLaptopCode },
-        { text: 'Testes e ajustes para garantir a qualidade do projeto, verificando compatibilidade, desempenho e SEO.', icon: faClipboardCheck },
-        { text: 'Entrega final e acompanhamento para garantir que o projeto esteja funcionando conforme o esperado.', icon: faRocket }
+        { text: 'Briefing estratégico para alinhar escopo, regras de negócio e stack de design com o produto final.', icon: faComments },
+        { text: 'Estruturação da interface via componentes granulares visando performance e facilidade operacional.', icon: faPencilRuler },
+        { text: 'Programação hands-on priorizando código limpo, componentização rigorosa e tempo de carregamento.', icon: faLaptopCode },
+        { text: 'Refinamento do Front-end: Validação de quebras e consistência em diferentes viewports e celulares.', icon: faClipboardCheck },
+        { text: 'Deploy otimizado (Live) com as chaves em mãos e painel ajustado, pronto para conversões reais.', icon: faRocket }
       ]
     },
     {
       id: 'ai',
-      title: 'IA',
+      title: 'IA & Automação',
       icon: faBrain,
       color: 'bg-gradient-to-br from-accent-purple/80 to-accent-blue/80',
       textColor: 'text-purple-300',
-      description: 'Automação inteligente com IA para otimizar processos e potencializar resultados.',
+      description: 'Implementação de modelos baseados em IA e Agentes Autônomos (LLMs) para ganho de escala. Otimizamos gargalos operacionais internos através de inteligência artificial de última geração.',
       features: [
-        { name: 'Criação e otimização de prompts para melhor desempenho em IA generativa.', icon: faPenFancy },
-        { name: 'Integração de IA em chatbots para modelos avançados de atendimento automatizado.', icon: faRobot },
-        { name: 'Uso de APIs de IA como Mistral, Llama e outras para personalização e escalabilidade.', icon: faNetworkWired },
-        { name: 'Análise de dados com IA para extração de insights estratégicos para negócios.', icon: faChartLine }
+        { name: 'Integração inteligente de Agentes Autônomos em seus fluxos operacionais de empresa.', icon: faPenFancy },
+        { name: 'Orquestração de modelos de linguagem e engenharia de prompts avançada (OpenAI/Claude).', icon: faRobot },
+        { name: 'Customização de LLMs focada no tom de comunicação oficial da sua própria marca na web.', icon: faNetworkWired },
+        { name: 'Análise descritiva/preditiva e automação de planilhas conectadas a inteligências artificiais.', icon: faChartLine }
       ],
-      technologies: ['GPT-4', 'Perplexity', 'OpenAI', 'APIs', 'Mistral', 'Llama'],
+      technologies: ['OpenAI API', 'LLMs', 'Prompt Engineering', 'Vector DBs', 'Python'],
       workflow: [
-        { text: 'Análise do problema e identificação de oportunidades para aplicação de IA.', icon: faMagnifyingGlassChart },
-        { text: 'Configuração de prompts, ajustes finos e integração com APIs como Mistral e LLaMA.', icon: faKeyboard },
-        { text: 'Implementação e testes da aplicação da IA ao processo desejado, com otimização contínua.', icon: faCogs },
-        { text: 'Análise de resultados e verificação do desempenho para melhorias na eficiência.', icon: faChartLine },
-        { text: 'Entrega e suporte para garantir que o projeto esteja funcionando conforme o esperado.', icon: faHandshake }
+        { text: 'Diagnóstico dos gargalos manuais e avaliação dos fluxos corporativos com alto nível de ociosidade.', icon: faMagnifyingGlassChart },
+        { text: 'Modelagem dos scripts iniciais, definindo onde os gatilhos e algoritmos de IA vão operar de fato.', icon: faKeyboard },
+        { text: 'Testes e calibração de prompts para prevenir falhas (alucinações) ou dados vazados dos LLMs.', icon: faCogs },
+        { text: 'Acoplamento do sistema de IA na arquitetura base (integração via webhook/API com o front-end).', icon: faChartLine },
+        { text: 'Produção executiva e testes abertos assegurando que o sistema substitua o esforço humano.', icon: faHandshake }
       ]
     },
     {
       id: 'chatbots',
-      title: 'Chatbots',
-      icon: faRobot,
+      title: 'Chatbots & Integ.',
+      icon: faComments,
       color: 'bg-gradient-to-br from-secondary-light/80 to-accent-purple/80',
       textColor: 'text-blue-300',
-      description: 'Automação de atendimento para tornar sua comunicação mais ágil, eficiente e escalável.',
+      description: 'Criação de soluções conversacionais avançadas acopladas a integrações de CRM para atendimento contínuo. Qualificação de leads em rotinas fluidas trabalhando em escala 24/7 para sua marca.',
       features: [
-        { name: 'Chatbots para atendimento ao cliente com respostas rápidas e eficientes.', icon: faHeadset },
-        { name: 'Assistentes virtuais para dúvidas e resolução automatizada de perguntas frequentes.', icon: faCalendarCheck },
-        { name: 'Agendamentos e captação de leads com marcação de consultas, reuniões e mais.', icon: faLink },
-        { name: 'Integração com APIs externas como WhatsApp, CRMs, e-commerce e outros sistemas.', icon: faLink },
-        { name: 'Possível uso de IA – Modelos avançados para conversas mais naturais e inteligentes.', icon: faBrain }
+        { name: 'Construção robusta de assistentes virtuais de captação que atuam interativamente 24/7.', icon: faHeadset },
+        { name: 'Filtro e qualificação inteligente (Inbound) conduzindo o usuário até a conversão e fechamento.', icon: faCalendarCheck },
+        { name: 'Orquestração visual de fluxos conversacionais fáceis de adaptar e acompanhar via CRMs de mercado.', icon: faLink },
+        { name: 'Integração em ferramentas como WhatsApp, Meta Ads e agendadores nativos do seu negócio.', icon: faLink },
+        { name: 'Unificação técnica unindo fluxos de atendimento programado a LLMs extremamente humanizados.', icon: faBrain }
       ],
-      technologies: ['DialogFlow', 'ChatGPT', 'Typebot', 'APIs externas', 'IA'],
+      technologies: ['Typebot', 'Zendesk', 'Make/n8n', 'APIs REST', 'Flow Design'],
       workflow: [
-        { text: 'Mapeamento das necessidades e identificação dos principais desafios e fluxos de conversa.', icon: faSitemap },
-        { text: 'Definição da lógica do chatbot e estruturação de interações, regras e integrações necessárias.', icon: faDiagramProject },
-        { text: 'Desenvolvimento e testes para construção do chatbot, integração com APIs externas e testes em ambiente real.', icon: faCodeBranch },
-        { text: 'Treinamento e otimização do chatbot, ajustes no comportamento para respostas mais precisas.', icon: faSliders },
-        { text: 'Lançamento e acompanhamento para entrega final com suporte inicial afim de garantir o funcionamento adequado.', icon: faHandshake }
+        { text: 'Auditoria de canais de aquisição para rastrear as dúvidas comuns e principais portas de entrada de Leads.', icon: faSitemap },
+        { text: 'Design diagramado da árvore conversacional e mapeamento completo do caminho ideal que o usuário fará.', icon: faDiagramProject },
+        { text: 'Implementação de conectores Webhook para ligar a coleta de dados de forma nativa e imediata ao HubSpot.', icon: faCodeBranch },
+        { text: 'Simulação tática, ajustes comportamentais e tratamento de erros no funil passivo da IA conversacional.', icon: faSliders },
+        { text: 'Operação (Go-Live) de suporte automatizado entregando tickets ativos para a mesa de análise e negócios.', icon: faHandshake }
+      ]
+    },
+    {
+      id: 'crm',
+      title: 'CRM & Ops',
+      icon: faChartLine,
+      color: 'bg-gradient-to-br from-accent-blue/80 to-accent-purple/80',
+      textColor: 'text-teal-300',
+      description: 'Implementação de CRM e Modelagem de Dados para trazer previsibilidade, controle e escala ao processo comercial.',
+      features: [
+        { name: 'Estruturação de pipelines e funil de vendas (Inbound) para gestão assertiva de leads.', icon: faSitemap },
+        { name: 'Parametrização de ponta a ponta do HubSpot adaptada ao seu produto ou serviço.', icon: faCogs },
+        { name: 'Criação de automações de follow-up que reduzem drasticamente o trabalho manual.', icon: faRobot },
+        { name: 'Painéis e Dashboards de Business Intelligence integrados ao Pipeline.', icon: faChartLine }
+      ],
+      technologies: ['HubSpot', 'Power BI', 'Integrações', 'Data Analysis', 'Sales Ops'],
+      workflow: [
+        { text: 'Mapeamento da atual jornada de vendas e identificação de gaps comerciais da empresa.', icon: faMagnifyingGlass },
+        { text: 'Configuração dos hubs do CRM (Propriedades, Negócios, Perfis e Regras de Negócio).', icon: faLaptopCode },
+        { text: 'Ativação das automações e conexão direta com as plataformas atuais e seu site principal.', icon: faNetworkWired },
+        { text: 'Treinamento do time comercial e testes práticos de usabilidade da ferramenta no dia a dia.', icon: faUsers },
+        { text: 'Lançamento acompanhado de monitoramento com painel de inteligência (KPIs).', icon: faRocket }
       ]
     }
   ];
