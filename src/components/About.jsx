@@ -217,8 +217,8 @@ const About = () => {
                   transition={{ duration: 0.6, delay: 0.6 }}
                 >
                   <motion.a 
-                    href="/PDFs/Curriculo_Alvaro_Henrique.pdf"
-                    download="Curriculo_Alvaro_Henrique.pdf"
+                    href="/PDFs/Alvaro_Privado_Curriculo_2026.pdf"
+                    download="Alvaro_Privado_Curriculo_2026.pdf"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full sm:w-auto flex-1 text-center bg-gradient-to-r from-accent-purple to-accent-blue hover:opacity-90 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 shadow-lg shadow-accent-purple/20 flex items-center justify-center gap-2"
